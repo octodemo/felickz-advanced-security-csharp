@@ -1,9 +1,10 @@
 /**
  * @name File Diagnostics
  * @kind diagnostic
- * @id csharp/file-diagnostics
+ * @id test/diagnostic/file-diagnostics
  */
 
+import csharp
 
 select  "Count of files in the CodeQL Database: " + 
         ".csproj Files: '" + count(File f | f.getExtension() = "csproj" | f ) + "'," +
