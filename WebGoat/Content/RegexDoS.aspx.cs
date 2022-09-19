@@ -21,9 +21,11 @@ namespace OWASP.WebGoat.NET
             string password = txtPassword.Text;
 
             Regex testUser = new Regex(userName);
-            if (match.Success)
+            Match matchUser = testUser.Match(password);
+            if (matchUser.Success)
             {
                 lblError.Text = "Username format invalid.";
+                return;
             }
             else
             {
